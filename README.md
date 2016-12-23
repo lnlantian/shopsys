@@ -1,1 +1,2 @@
 shopsys readme
+#由Python基于Django的web框架编写的个人博客发布系统
