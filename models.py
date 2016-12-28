@@ -18,5 +18,17 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
 
 # register the model (especially important
+from django.db import models
+from django.contrib import admin
+
+# Create your models here.
+class BlogsPost(models.Model):
+    title = models.CharField(max_length = 150)
+    body = models.TextField()
+    timestamp = models.DateTimeField()
+
+admin.site.register(BlogsPost)
+
+
 
 admin.site.register(BlogPost)
