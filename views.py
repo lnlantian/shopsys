@@ -4,14 +4,10 @@ from django.conf import settings
 from .models import *  
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger ##导入  
   
-# Get an instance of a logger  
-logger = logging.getLogger(__name__)  
-  
+logger = logging.getLogger(__name__)   
 def global_setting(request):  
     return {'SITE_NAME': settings.SITE_NAME,  
-            'WEIBO_SINA': settings.WEIBO_SINA}  
-  
-  
+            'WEIBO_SINA': settings.WEIBO_SINA}    
 def index(request):  
     try:  
         categories = Cateory.objects.all()  
@@ -23,8 +19,7 @@ def index(request):
         except PageNotAnInteger:  
             articles = paginator.page(1)  
         except EmptyPage:  
-            articles = paginator.page(paginator.num_pages)  
-  
+            articles = paginator.page(paginator.num_pages)    
     except Exception as e:  
         logger.error(e)  
     return render(request, 'index.html', locals())  
