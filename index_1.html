@@ -1,7 +1,6 @@
 {% block title %} {{ blog.caption }} - DannyBlog {% endblock %}
             
-{% load comments %}
-            
+{% load comments %}          
 {% block content_body %}
   <div class="main_body">
     <div class="blog_body">
@@ -40,8 +39,7 @@
             </div>
             {% endfor %}
       {% endifequal %}
-      </div>
-            
+      </div>        
       <div class="comments_nav">新的评论</div>
       {% get_comment_form for blog as blog_form %}
       <div class="comments_body">
