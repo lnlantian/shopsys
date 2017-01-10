@@ -4,7 +4,8 @@ from django.conf import settings
 from .models import *  
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger ##导入  
   
-logger = logging.getLogger(__name__)   
+logger = logging.getLogger(__name__) 
+
 def global_setting(request):  
     return {'SITE_NAME': settings.SITE_NAME,  
             'WEIBO_SINA': settings.WEIBO_SINA}    
